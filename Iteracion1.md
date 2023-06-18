@@ -1,15 +1,18 @@
 ---
-# Configuration for the Jekyll template "Just the Docs"
 parent: Decisions
 nav_order: 100
-title: ADR Template
+title: Iteración 1
 
-# These are optional elements. Feel free to remove any of them.
-# status: "{proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)}"
-# date: {YYYY-MM-DD when the decision was last updated}
-# deciders: {list everyone involved in the decision}
-# consulted: {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
-# informed: {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
+# status: proposed
+# date: 2023-06-18
+# deciders: 
+  * Julian Andres Mendez Melo
+  * Alejandro Ahogado Prieto 
+# consulted: 
+  * Maria Alejandra Vargas
+  * Luccas Rojas
+# informed:
+  * Mariangela Gabriela Paez
 ---
 <!-- we need to disable MD025, because we use the different heading "ADR Template" in the homepage (see above) than it is foreseen in the template -->
 <!-- markdownlint-disable-next-line MD025 -->
@@ -17,8 +20,7 @@ title: ADR Template
 
 ## Context and Problem Statement
 
-{Describe the context and problem statement, e.g., in free form using two to three sentences or in the form of an illustrative story.
- You may want to articulate the problem in form of a question and add links to collaboration boards or issue management systems.}
+De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita definir el estilo arquitectónico para satisfacer los requerimientos funcionales identificados. El sistema consta de 3 líneas de producción y cuenta con más de 10 sensores IoT que se encargan de recopilar la información sobre el estado de los dispositivos físicos relacionados. 
 
 <!-- This is an optional element. Feel free to remove. -->
 ## Decision Drivers
