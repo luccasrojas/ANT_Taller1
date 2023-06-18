@@ -13,75 +13,49 @@ title: Iteración 1
   * Luccas Rojas
 # informed:
   * Mariangela Gabriela Paez
----
-<!-- we need to disable MD025, because we use the different heading "ADR Template" in the homepage (see above) than it is foreseen in the template -->
-<!-- markdownlint-disable-next-line MD025 -->
-# {short title of solved problem and solution}
+
+# Selección del estilo arquitectónico (Event Driven)
 
 ## Context and Problem Statement
-
 De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita definir el estilo arquitectónico para satisfacer los requerimientos funcionales identificados. El sistema consta de 3 líneas de producción y cuenta con más de 10 sensores IoT que se encargan de recopilar la información sobre el estado de los dispositivos físicos relacionados. 
 
-<!-- This is an optional element. Feel free to remove. -->
 ## Decision Drivers
 
-* {decision driver 1, e.g., a force, facing concern, …}
-* {decision driver 2, e.g., a force, facing concern, …}
-* … <!-- numbers of drivers can vary -->
-
+* RF3 - Gestión de los datos de los sensores IoT: De acuerdo al estado de los sensores pueden generarse eventos en el sistema que faciliten la comunicación en tiempo real con otros componentes suscritos a estos eventos, que les permita cumplir con las necesidades planteadas.
+* RF8 - Notificar actualizaciones, fallos o sobrecargas: Se necesita garantizar una comunicación asíncrona, que le permita al sistema estar preparado para ejecutar ciertas acciones de acuerdo al evento generado por los sensores.
+  
 ## Considered Options
 
-* {title of option 1}
-* {title of option 2}
-* {title of option 3}
-* … <!-- numbers of options can vary -->
+* Estilo arquitectónico Event driven
 
 ## Decision Outcome
 
-Chosen option: "{title of option 1}", because
-{justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
+Opción planteada: "Estilo arquitectónico Event driven" porque de acuerdo a los requerimientos planteados este estilo permite cumplir con un sistema altamente reactivo y flexible, garantizando la comunicación asíncrona a través de eventos. De igual manera, el estilo event-driven asegura el correcto funcionamiento de un sistema dependiente de las notificaciones y dispuesto a responder de forma eficiente a los datos y al entorno. 
 
-<!-- This is an optional element. Feel free to remove. -->
 ### Consequences
 
-* Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
-* Bad, because {negative consequence, e.g., compromising one or more desired qualities, …}
-* … <!-- numbers of consequences can vary -->
+* Bueno, porque permite manejar escenarios donde la concurrencia es necesaria.
+* Bueno, porque asegura la posibilidad de manejar un sistema altamente escalable.
+* Bueno, porque garantiza un desacoplamiento de componentes al pemitir suscribirse a la informacion necesaria.
+* Malo, porque puede presentarse dificultad en la gestión de eventos al existir muchos suscriptores.
+* Malo, porque debido a la naturaleza asincrónica las pruebas y depuración del sistema pueden volverse más complejas.
 
-<!-- This is an optional element. Feel free to remove. -->
 ### Confirmation
 
-{Describe how the implementation of/compliance with the ADR is confirmed. E.g., by a review or an ArchUnit test.
- Although we classify this element as optional, it is included in most ADRs.}
+Este item es muy dependiente de la infraestructura con la que cuenta el cliente, sin embargo tras la implementación de este estilo arquitectónico se sugiere la revision del funcionamiento, por medio de pruebas tales cómo, de integración, de unidad, rendimiento, consumo de recursos y de seguridad.
 
-<!-- This is an optional element. Feel free to remove. -->
 ## Pros and Cons of the Options
 
-### {title of option 1}
+### {Event driven}
 
-<!-- This is an optional element. Feel free to remove. -->
-{example | description | pointer to more information | …}
+* Bueno, porque permite integración de diferentes sistemas y componentes.
+* Bueno, porque permite un sistema con una alta disponibilidad por su tolerancia a fallos.
+* Neutral, porque depende de una buena planificacion y diseño para su implementación.
+* Neutral, porque puede presentarse un alto consumo de recursos pero depende mucho de la infraestructura actual del cliente. 
 
-* Good, because {argument a}
-* Good, because {argument b}
-<!-- use "neutral" if the given argument weights neither for good nor bad -->
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* … <!-- numbers of pros and cons can vary -->
-
-### {title of other option}
-
-{example | description | pointer to more information | …}
-
-* Good, because {argument a}
-* Good, because {argument b}
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* …
-
-<!-- This is an optional element. Feel free to remove. -->
 ## More Information
 
+PENDIENTE REVISAR JUNTO AL EQUIPO DE LOS ARQUITECTOS COGNITIVOS
 {You might want to provide additional evidence/confidence for the decision outcome here and/or
  document the team agreement on the decision and/or
  define when/how this decision the decision should be realized and if/when it should be re-visited.
