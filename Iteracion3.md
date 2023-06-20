@@ -43,11 +43,11 @@ Opción planteada: "Patrón de diseño (Data Access)", porque de acuerdo a los r
 ### Confirmation
 Este item es muy dependiente de la infraestructura con la que cuenta el cliente, sin embargo tras la implementación de este patrón de diseño se sugiere la revision del funcionamiento, por medio de pruebas tales cómo:
 
-Integración
-Funcionalidad (operaciones CRUD)
-Rendimiento (acceso a datos)
-Integridad de datos
-Seguridad
+- Integración
+- Funcionalidad (operaciones CRUD)
+- Rendimiento (acceso a datos)
+- Integridad de datos
+- Seguridad
 
 ## Pros and Cons of the Options
 
