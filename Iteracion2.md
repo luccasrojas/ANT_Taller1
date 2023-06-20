@@ -1,86 +1,66 @@
 ---
-# Configuration for the Jekyll template "Just the Docs"
 parent: Decisions
 nav_order: 100
-title: ADR Template
+title: Iteración 2
 
-# These are optional elements. Feel free to remove any of them.
-# status: "{proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)}"
-# date: {YYYY-MM-DD when the decision was last updated}
-# deciders: {list everyone involved in the decision}
-# consulted: {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
-# informed: {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
+# status: proposed
+# date: 2023-06-20
+# deciders: 
+  * Julian Andres Mendez Melo
+  * Alejandro Ahogado Prieto 
+# consulted: 
+  * Maria Alejandra Vargas
+  * Luccas Rojas
+# informed:
+  * Mariangela Gabriela Paez
 ---
-<!-- we need to disable MD025, because we use the different heading "ADR Template" in the homepage (see above) than it is foreseen in the template -->
-<!-- markdownlint-disable-next-line MD025 -->
-# {short title of solved problem and solution}
+
+# Seleccion de primer patrón de diseño (Observer)
 
 ## Context and Problem Statement
 
-{Describe the context and problem statement, e.g., in free form using two to three sentences or in the form of an illustrative story.
- You may want to articulate the problem in form of a question and add links to collaboration boards or issue management systems.}
+De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita definir el patrón arquitectónico para satisfacer los requerimientos funcionales identificados. El sistema consta de 3 líneas de producción y cuenta con más de 10 sensores IoT que se encargan de recopilar la información sobre el estado de los dispositivos físicos relacionados. En este caso es importante encontrar una solución para comunicar los diferentes sensores entre sí y notificar a los que se encuentren suscritos. 
 
-<!-- This is an optional element. Feel free to remove. -->
 ## Decision Drivers
 
-* {decision driver 1, e.g., a force, facing concern, …}
-* {decision driver 2, e.g., a force, facing concern, …}
-* … <!-- numbers of drivers can vary -->
+* RF1 - Visualización de analíticas (proceso productivo y órdenes de trabajo): Se debe garantizar una visualización en tiempo real de las analíticas del sistema. Por lo que es importante que el estado de las diferentes etapas del proceso vaya siendo presentado en los gráficos correspondientes, lo cuál debe verse reflejado en el porcentaje del personal y de los recursos asignados. 
+* RF4 - Visualizar las analíticas de los sensores IoT: Es importante conocer en tiempo real el envío de mensajes entre los sensores, la recepción de los datos y el estado de sus conexiones.
 
 ## Considered Options
 
-* {title of option 1}
-* {title of option 2}
-* {title of option 3}
-* … <!-- numbers of options can vary -->
+* Patrón de diseño (Observer)
 
 ## Decision Outcome
 
-Chosen option: "{title of option 1}", because
-{justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
+Opcion planteada: "Patrón de diseño (Observer)", porque de acuerdo a los requerimientos planteados este patrón permite establecer una comunicación desacoplada entre los diferentes componentes observadores, garantizando una interacción constante y efectiva entre el modulo de visualización y los diferentes estados que se puedan presentar.
 
-<!-- This is an optional element. Feel free to remove. -->
 ### Consequences
+* Bueno, porque se garantiza una actualización en tiempo real de los estados y sus datos asociados.
+* Bueno, porque evita realizar múltiples consultas sobre los mismos datos.
+* Bueno, porque se continúa garantizando la arquitectura flexible y desacoplada.
+* Bueno, porque se abre la posibilidad de tener un sistema altamente escalable al poder agregar nuevos objetos observadores en caso de ser necesario.
 
-* Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
-* Bad, because {negative consequence, e.g., compromising one or more desired qualities, …}
-* … <!-- numbers of consequences can vary -->
-
-<!-- This is an optional element. Feel free to remove. -->
+* Malo, porque puede darse un elevado consumo de recursos debido al exceso de notificaciones.
+* Malo, porque se puede presentar un rendimiento deficiente en caso de no contar con la infraestructura necesaria.
+* Malo, porque al ser un flujo de actualización constante puede ser difícil depurarlo.
+   
 ### Confirmation
+Este item es muy dependiente de la infraestructura con la que cuenta el cliente, sin embargo tras la implementación de este patrón de diseño se sugiere la revision del funcionamiento, por medio de pruebas tales cómo:
 
-{Describe how the implementation of/compliance with the ADR is confirmed. E.g., by a review or an ArchUnit test.
- Although we classify this element as optional, it is included in most ADRs.}
+Integración
+Rendimiento (cantidad de notificaciones)
+Consumo de recursos
+Actualización en tiempo real
 
-<!-- This is an optional element. Feel free to remove. -->
 ## Pros and Cons of the Options
 
-### {title of option 1}
+### {Observer}
 
-<!-- This is an optional element. Feel free to remove. -->
-{example | description | pointer to more information | …}
+* Bueno, porque se garantiza comunicación eficiente entre los elementos relacionados (estado del proceso productivo y órdenes de trabajo, con la visualización de las gráficas y los datos presentados).
+* Bueno, porque permite presentar siempre información precisa y actualizada.
+* Neutral, porque la gestión del sistema (notificaciones y actualizaciones) puede generar una complejidad adicional.
+* Malo, porque puede haber un impacto en el rendimiento en caso de que se quieran procesar analiticas de una cantidad muy grande de observadores a la vez, con una alta frecuencia de actualización.
 
-* Good, because {argument a}
-* Good, because {argument b}
-<!-- use "neutral" if the given argument weights neither for good nor bad -->
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* … <!-- numbers of pros and cons can vary -->
-
-### {title of other option}
-
-{example | description | pointer to more information | …}
-
-* Good, because {argument a}
-* Good, because {argument b}
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* …
-
-<!-- This is an optional element. Feel free to remove. -->
 ## More Information
 
-{You might want to provide additional evidence/confidence for the decision outcome here and/or
- document the team agreement on the decision and/or
- define when/how this decision the decision should be realized and if/when it should be re-visited.
-Links to other decisions and resources might appear here as well.}
+PENDIENTE, links relacionados
