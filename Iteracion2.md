@@ -14,7 +14,7 @@ title: Iteración 2
 # informed:
   * Mariangela Gabriela Paez
 
-# Seleccion de primer patrón de diseño (Observer)
+# Selección de primer patrón de diseño (Observer)
 
 ## Context and Problem Statement
 
