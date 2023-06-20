@@ -28,6 +28,7 @@ De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita
 ## Considered Options
 
 * Patrón de diseño (Observer)
+* Patrón de diseño (Publish-Subscribe)
 
 ## Decision Outcome
 
@@ -63,3 +64,4 @@ Actualización en tiempo real
 ## More Information
 
 PENDIENTE, links relacionados
+[Alternativa Publish-Subscribe](https://github.com/luccasrojas/ANT_Taller1/blob/Senior-Iteracion1/iteraci%C3%B3n2_alternativa.md)
