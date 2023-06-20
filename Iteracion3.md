@@ -1,86 +1,64 @@
 ---
-# Configuration for the Jekyll template "Just the Docs"
 parent: Decisions
 nav_order: 100
-title: ADR Template
+title: Iteración 3
 
-# These are optional elements. Feel free to remove any of them.
-# status: "{proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)}"
-# date: {YYYY-MM-DD when the decision was last updated}
-# deciders: {list everyone involved in the decision}
-# consulted: {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
-# informed: {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
----
-<!-- we need to disable MD025, because we use the different heading "ADR Template" in the homepage (see above) than it is foreseen in the template -->
-<!-- markdownlint-disable-next-line MD025 -->
-# {short title of solved problem and solution}
+# status: proposed
+# date: 2023-06-20
+# deciders: 
+  * Julian Andres Mendez Melo
+  * Alejandro Ahogado Prieto 
+# consulted: 
+  * Maria Alejandra Vargas
+  * Luccas Rojas
+# informed:
+  * Mariangela Gabriela Paez
+
+# Selección de primer patrón de diseño (Data Access)
 
 ## Context and Problem Statement
 
-{Describe the context and problem statement, e.g., in free form using two to three sentences or in the form of an illustrative story.
- You may want to articulate the problem in form of a question and add links to collaboration boards or issue management systems.}
+De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita definir el patrón arquitectónico para satisfacer los requerimientos funcionales identificados. El sistema consta de 3 líneas de producción y cuenta con más de 10 sensores IoT que se encargan de recopilar la información sobre el estado de los dispositivos físicos relacionados. En este caso es importante encontrar una solución para almacenar las ordenes de trabajo y el inventario existente de los materiales (cada uno con un identificador único). 
 
-<!-- This is an optional element. Feel free to remove. -->
 ## Decision Drivers
 
-* {decision driver 1, e.g., a force, facing concern, …}
-* {decision driver 2, e.g., a force, facing concern, …}
-* … <!-- numbers of drivers can vary -->
+* RF5 - Almacenamiento de datos en la BBDD: Se debe garantizar la posibilidad de almacenar las órdenes de trabajo y el inventario existente de los materiales, el cuál va a irse actualizando constantemente. Se necesita que se continua respetando la modularidad del sistema y la escalabilidad del mismo. 
 
 ## Considered Options
 
-* {title of option 1}
-* {title of option 2}
-* {title of option 3}
-* … <!-- numbers of options can vary -->
+* Patrón de diseño (Data Access)
 
 ## Decision Outcome
 
-Chosen option: "{title of option 1}", because
-{justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
+Opción planteada: "Patrón de diseño (Data Access)", porque de acuerdo a los requerimientos planteados este patrón permite continuar con la separación de responsabilidades, garantizando un sistema con una alta modularidad y mantenimiento. De igual manera, al proporcionar una capa de abstracción entre la lógica y la base de datos, se abre la posibilidad de realizar migraciones sin afectar la lógica de la aplicación (lo cuál es viable que suceda por el tipo de datos que se van a almacenar ya que el inventario puede cambiar se manera significativa). Asi mismo, este patrón facilita la posibilidad de optimizar el acceso a estos para mejorar la escalabilidad y rendimiento del sistema. 
 
-<!-- This is an optional element. Feel free to remove. -->
 ### Consequences
-
-* Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
-* Bad, because {negative consequence, e.g., compromising one or more desired qualities, …}
-* … <!-- numbers of consequences can vary -->
-
-<!-- This is an optional element. Feel free to remove. -->
+* Bueno, porque facilita la implementación de pruebas específicas.
+* Bueno, porque aumenta la confiabilidad del sistema al tener una mayor cobertura en las pruebas.
+* Bueno, porque garantiza una arquitectura escalable y mantenible.
+* Malo, porque la complejidad en la implementación puede aumentar por los componentes necesarios y la consistencia entre estos.
+* Malo, puede presentarse una sobrecarga de código.
+* Malo, porque si no se optimiza de manera adecuada puede afectar el rendimiento.
+   
 ### Confirmation
+Este item es muy dependiente de la infraestructura con la que cuenta el cliente, sin embargo tras la implementación de este patrón de diseño se sugiere la revision del funcionamiento, por medio de pruebas tales cómo:
 
-{Describe how the implementation of/compliance with the ADR is confirmed. E.g., by a review or an ArchUnit test.
- Although we classify this element as optional, it is included in most ADRs.}
+Integración
+Funcionalidad (operaciones CRUD)
+Rendimiento (acceso a datos)
+Integridad de datos
+Seguridad
 
-<!-- This is an optional element. Feel free to remove. -->
 ## Pros and Cons of the Options
 
-### {title of option 1}
+### {DAO}
 
-<!-- This is an optional element. Feel free to remove. -->
-{example | description | pointer to more information | …}
+* Bueno, porque facilitar la separación de responsabilidades. Al separar la lógica del acceso a datos de la lógica del negocio
+* Bueno, porque se puede reutilizar código del acceso a datos.
+* Bueno, porque brinda flexibilidad frente a las tecnologías implementadas en el sistema. 
+* Neutral, porque el rendimiento asociado depende de la implementación específica que se realice, al igual que la escalabilidad del sistema, la cuál se ve estrechamente relacionada con las estrategias y arquitectura en general.
+* Malo, por la complejidad en su implementación al buscar establecer la comunicación concreta entre el negocio y los datos.
 
-* Good, because {argument a}
-* Good, because {argument b}
-<!-- use "neutral" if the given argument weights neither for good nor bad -->
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* … <!-- numbers of pros and cons can vary -->
-
-### {title of other option}
-
-{example | description | pointer to more information | …}
-
-* Good, because {argument a}
-* Good, because {argument b}
-* Neutral, because {argument c}
-* Bad, because {argument d}
-* …
-
-<!-- This is an optional element. Feel free to remove. -->
 ## More Information
 
-{You might want to provide additional evidence/confidence for the decision outcome here and/or
- document the team agreement on the decision and/or
- define when/how this decision the decision should be realized and if/when it should be re-visited.
-Links to other decisions and resources might appear here as well.}
+PENDIENTE, links relacionados
