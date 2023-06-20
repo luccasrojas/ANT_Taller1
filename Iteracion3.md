@@ -14,7 +14,7 @@ title: Iteración 3
 # informed:
   * Mariangela Gabriela Paez
 
-# Selección de primer patrón de diseño (Data Access)
+# Selección de patrón de diseño (Data Access) para almacenamiento en BBDD
 
 ## Context and Problem Statement
 
