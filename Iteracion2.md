@@ -13,7 +13,6 @@ title: Iteración 2
   * Luccas Rojas
 # informed:
   * Mariangela Gabriela Paez
----
 
 # Seleccion de primer patrón de diseño (Observer)
 
