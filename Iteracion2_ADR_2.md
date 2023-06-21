@@ -64,5 +64,5 @@ Actualización en tiempo real
 
 ## More Information
 
-- [Alternativa Publish-Subscribe](https://github.com/luccasrojas/ANT_Taller1/blob/Senior-Iteracion1/iteracion2_ADR_2_A1.md)
-- [Alternativa Chain of Responsability](https://github.com/luccasrojas/ANT_Taller1/blob/Senior-Iteracion1/iteracion2_ADR_2_A2.md )
+- [Alternativa Publish-Subscribe](https://github.com/luccasrojas/ANT_Taller1/blob/Senior-Iteracion1/iteraci%C3%B3n2_ADR_2_A1.md)
+- [Alternativa Chain of Responsability](https://github.com/luccasrojas/ANT_Taller1/blob/Senior-Iteracion1/iteracion2_ADR_2_A2.md)
