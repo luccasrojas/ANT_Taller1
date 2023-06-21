@@ -29,6 +29,7 @@ De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita
 
 * Patrón de diseño (Observer)
 * Patrón de diseño (Publish-Subscribe)
+* * Patrón de diseño (Chain of Responsability)
 
 ## Decision Outcome
 
@@ -63,5 +64,5 @@ Actualización en tiempo real
 
 ## More Information
 
-PENDIENTE, links relacionados
-[Alternativa Publish-Subscribe](https://github.com/luccasrojas/ANT_Taller1/blob/Senior-Iteracion1/iteraci%C3%B3n2_alternativa.md)
+- [Alternativa Publish-Subscribe](https://github.com/luccasrojas/ANT_Taller1/blob/Senior-Iteracion1/iteracion2_ADR_2_A1.md)
+- [Alternativa Chain of Responsability](https://github.com/luccasrojas/ANT_Taller1/blob/Senior-Iteracion1/iteracion2_ADR_2_A2.md )
