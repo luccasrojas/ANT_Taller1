@@ -22,7 +22,7 @@ De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita
 
 ## Decision Drivers
 
-* RF5 - Almacenamiento de datos en la BBDD: Se debe garantizar la posibilidad de almacenar las órdenes de trabajo y el inventario existente de los materiales, el cuál va a irse actualizando constantemente. Se necesita que se continua respetando la modularidad del sistema y la escalabilidad del mismo. 
+* RF5 - Almacenamiento de datos en la BBDD: Se debe garantizar la posibilidad de almacenar las órdenes de trabajo y el inventario existente de los materiales, el cuál va a irse actualizando constantemente. Se necesita que se continue respetando la modularidad del sistema y la escalabilidad del mismo. 
 
 ## Considered Options
 
@@ -30,7 +30,7 @@ De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita
 
 ## Decision Outcome
 
-Opción planteada: "Patrón de diseño (Data Access)", porque de acuerdo a los requerimientos planteados este patrón permite continuar con la separación de responsabilidades, garantizando un sistema con una alta modularidad y mantenimiento. De igual manera, al proporcionar una capa de abstracción entre la lógica y la base de datos, se abre la posibilidad de realizar migraciones sin afectar la lógica de la aplicación (lo cuál es viable que suceda por el tipo de datos que se van a almacenar ya que el inventario puede cambiar se manera significativa). Asi mismo, este patrón facilita la posibilidad de optimizar el acceso a estos para mejorar la escalabilidad y rendimiento del sistema. 
+Opción planteada: "Patrón de diseño (Data Access)", porque de acuerdo a los requerimientos planteados este patrón permite continuar con la separación de responsabilidades, garantizando un sistema con una alta modularidad y mantenimiento. De igual manera, al proporcionar una capa de abstracción entre la lógica y la base de datos, se abre la posibilidad de realizar migraciones sin afectar la lógica de la aplicación (lo cuál es viable que suceda por el tipo de datos que se van a almacenar ya que el inventario puede cambiar se manera significativa). Asi mismo, este patrón facilita la posibilidad de optimizar el acceso los datos para mejorar la escalabilidad y rendimiento del sistema. 
 
 ### Consequences
 * Bueno, porque facilita la implementación de pruebas específicas.
@@ -43,7 +43,7 @@ Opción planteada: "Patrón de diseño (Data Access)", porque de acuerdo a los r
 ### Confirmation
 Este item es muy dependiente de la infraestructura con la que cuenta el cliente, sin embargo tras la implementación de este patrón de diseño se sugiere la revision del funcionamiento, por medio de pruebas tales cómo:
 
-- Integración
+- Consistencia de datos
 - Funcionalidad (operaciones CRUD)
 - Rendimiento (acceso a datos)
 - Integridad de datos
@@ -53,10 +53,10 @@ Este item es muy dependiente de la infraestructura con la que cuenta el cliente,
 
 ### {DAO}
 
-* Bueno, porque facilitar la separación de responsabilidades. Al separar la lógica del acceso a datos de la lógica del negocio
+* Bueno, porque facilitar la separación de responsabilidades. Al separar la lógica del acceso a datos de la lógica del negocio.
 * Bueno, porque se puede reutilizar código del acceso a datos.
 * Bueno, porque brinda flexibilidad frente a las tecnologías implementadas en el sistema. 
-* Neutral, porque el rendimiento asociado depende de la implementación específica que se realice, al igual que la escalabilidad del sistema, la cuál se ve estrechamente relacionada con las estrategias y arquitectura en general.
+* Neutral, porque el rendimiento asociado depende de la implementación específica que se realice, al igual que la escalabilidad del sistema, la cuál se ve estrechamente relacionado con las estrategias y arquitectura en general.
 * Malo, por la complejidad en su implementación al buscar establecer la comunicación concreta entre el negocio y los datos.
 
 ## More Information
