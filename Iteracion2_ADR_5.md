@@ -3,7 +3,7 @@ parent: Decisions
 nav_order: 100
 title: Iteración 2
 
-# status: proposed
+# status: Aprobada
 # date: 2023-06-20
 # deciders: 
   * Julian Andres Mendez Melo
@@ -52,7 +52,7 @@ Para el caso del algoritmo de optimización de las ordenes de trabajo se pueden 
 ## Pros and Cons of the Options
 
 ### {Strategy}
-*Bueno, permite optimizar procesos dependiendo de la situación y los datos que hayan sido procesados anteriormente. 
+* Bueno, permite optimizar procesos dependiendo de la situación y los datos que hayan sido procesados anteriormente. 
 * Malo, este nuevo componente implica costos y mantenimiento adicionales.
 
 ## More Information
