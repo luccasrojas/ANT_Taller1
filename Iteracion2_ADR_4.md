@@ -23,7 +23,7 @@ Se debe asignar al operario las máquinas que debe manejar dentro del proceso pr
 
 ## Decision Drivers
 
-* RF7 - Asignación de ordenes de trabajo y máquinas a operarios (fabricación de componentes): Es importante realizar una asignación de ordenes de trabajos por operarios de forma adecuada en función de los recursos y la maquinaria disponible. Por lo que se requiere persistir información sobre operario asignado, la orden de trabajo y la máquina relacionada, así como ejecutar las correspondientes asignaciones.
+* RF2 - Asignación de ordenes de trabajo y máquinas a operarios (fabricación de componentes): Es importante realizar una asignación de ordenes de trabajos por operarios de forma adecuada en función de los recursos y la maquinaria disponible. Por lo que se requiere persistir información sobre operario asignado, la orden de trabajo y la máquina relacionada, así como ejecutar las correspondientes asignaciones.
 
 ## Considered Options
 
