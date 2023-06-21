@@ -28,7 +28,7 @@ De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita
 
 ## Decision Outcome
 
-Opción planteada: "Patrón de diseño (Abstract Factory)", porque de acuerdo a los requerimientos planteados este patrón proporciona una solución coherente y consistente, para poder crear y gestionar las diferentes familias de sensores con características específicas. Abriendo la posibilidiad a que de ser necesario el sistema pueda adaptarse y crecer con nuevas familias de sensores en el futuro.
+Opción planteada: "Patrón de diseño (Abstract Factory)", porque de acuerdo a los requerimientos planteados este patrón proporciona una solución coherente y consistente, para poder crear y gestionar las diferentes familias de sensores con características específicas. Abriendo la posibilidad de que el sistema pueda adaptarse y crecer con nuevas familias de sensores en el futuro.
 * Bueno, porque facilita la creación y gestión de los diferentes sensores.
 * Bueno, porque brinda flexibilidad y extensibilidad en el sistema en el caso de necesitar agregar nuevas familias de sensores sin tener que modificar el código existente.
 * Bueno, porque garantiza la creación consistente los diferentes sensores, al seguir una interfaz definida.
@@ -53,7 +53,7 @@ Este item es muy dependiente de la infraestructura con la que cuenta el cliente,
 * Bueno, porque se puede se pueden introducir variantes de productos de forma sencilla.
 * Bueno, porque garantiza compatibilidad entre productos creados.
 * Bueno, porque en caso de encapsular la lógica de creación, su mantenimiento puede ser sencillo.
-* Neutral, porque al ser un patrón de diseño avanzado la curva de aprendizaje para el manejo de este puede verse afectada, sin embargo una vez que se supera el sistema fluye con eficiencia y coherencia.
+* Neutral, porque al ser un patrón de diseño avanzado la curva de aprendizaje para el manejo de este puede verse afectada, sin embargo una vez que se supera, el sistema fluye con eficiencia y coherencia.
 * Malo, por la complejidad en su implementación en caso de que existan múltiples familias de sensores con diferentes comportamientos.
 ## More Information
 
