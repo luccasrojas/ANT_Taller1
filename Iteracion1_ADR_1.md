@@ -3,7 +3,7 @@ parent: Decisions
 nav_order: 100
 title: Iteración 1
 
-# status: proposed
+# status: aprobada
 # date: 2023-06-18
 # deciders: 
   * Julian Andres Mendez Melo
