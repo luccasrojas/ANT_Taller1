@@ -21,7 +21,7 @@ De acuerdo a un sistema planteado para una factoría inteligente 4.0 se necesita
 Para comunuicar los diferentes sensores entre sí y notificar a los componentes que se encuentren suscritos a estos. 
 
 ## Decision Drivers
-*RF6 – 6.1: Identificación de los sensores del sistema: Es importante poder pasar las peticiones a lo largo de la cadena de sensores, donde cada uno procesa la información y la envía al siguiente manejador o sensor. 
+*RF6 – 6.2: Identificación de los sensores del sistema: Es importante poder pasar las peticiones a lo largo de la cadena de sensores, donde cada uno procesa la información y la envía al siguiente manejador o sensor. 
 
 ## Considered Options
 
