@@ -13,4 +13,6 @@
 |Luccas Rojas	|l.rojasb@uniandes.edu.co|
 
 #### Organización
-Los archivos pertenecientes a las iteraciones se encuentran marcados de la siguiente forma iteracion[numero]_ADR_[id], si se encuentran con A# después de lo anterior se hace referencia a que se tuvieron algunas alternativas. Por otra parte, se encuentra el archivo .xmi que es el diagrama realizado. Este también se encuentra en el siguiente [link](https://app.genmymodel.com/editor/edit/_MZmMcBFLEe6XB7IKjUVJvw#)
+Los archivos pertenecientes a las iteraciones se encuentran marcados de la siguiente forma iteracion[numero]_ADR_[id], si se encuentran con A# después de lo anterior se hace referencia a que se tuvieron algunas alternativas. Por otra parte, se encuentra el archivo .xmi que es el diagrama realizado. Para tener una visualización del mismo se encuentra el archivo *"UML Diagrama clases y paquetes.svg"* que tiene la imagen de este. 
+
+[Link para acceder al diagrama](https://app.genmymodel.com/editor/edit/_MZmMcBFLEe6XB7IKjUVJvw#)
